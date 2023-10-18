@@ -8,7 +8,7 @@ router.get('/getmetadata', async function(req, res, next) {
     try {
         res.json(await authService.getMetadata());
     } catch (err) {
-        console.error(`Error while getting metadata `, err.message);
+        console.error(`Error while getting metadata `, err);
         next(err);
     }
 });
@@ -17,7 +17,7 @@ router.get('/double', async function(req, res, next) {
     try {
         res.json(await authService.double(req.query.number));
     } catch (err) {
-        console.error(`Error while getting status `, err.message);
+        console.error(`Error while getting status `, err);
         next(err);
     }
 });
